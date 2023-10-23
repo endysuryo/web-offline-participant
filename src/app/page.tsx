@@ -1,7 +1,12 @@
+'use client'
+
+import useGetListBank from '@/libs/apis/use-get-list-bank'
 import { Button, Checkbox, TextField } from '@mui/material'
 import React from 'react'
 
 export default function Home() {
+  const { data, error, isLoading } = useGetListBank({ size: 10 })
+
   return (
     <main>
       <form className='flex flex-col items-center p-24 gap-3'>
