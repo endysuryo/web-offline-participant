@@ -1,6 +1,6 @@
 'use client'
 
-import useGetListBank from '@/libs/apis/use-get-list-bank'
+import useGetListBank from '@/libs/apis/queries/use-get-list-bank'
 import { Button, Checkbox, TextField } from '@mui/material'
 import React from 'react'
 

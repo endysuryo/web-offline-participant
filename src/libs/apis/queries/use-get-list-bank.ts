@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import axiosInstance from '../configs/axios'
+import axiosInstance from '../../configs/axios'
 
 export interface IGetListBankPayload {
   size: number
@@ -27,7 +27,7 @@ async function getListBankAPI({ size }: IGetListBankPayload): Promise<IBankResul
 
     return result?.data?.data
   } catch (error: any) {
-    throw error?.response?.data?.message[0] || 'Internal Server Error'
+    throw error?.response?.data?.message
   }
 }
 
