@@ -1,12 +1,12 @@
-import { useMutation, useQuery } from '@tanstack/react-query'
+import { useMutation } from '@tanstack/react-query'
 import axiosInstance from '../../configs/axios'
 
-export interface ISubmitSurveyPayload {
+export type TSubmitSurveyPayload = {
   submission_id: number
   answer: boolean
 }
 
-export interface ISubmitSurveyResult {
+export type TSubmitSurveyResult = {
   status: number
   message: string
 }
@@ -14,7 +14,7 @@ export interface ISubmitSurveyResult {
 async function submitSurveyAPI({
   submission_id,
   answer,
-}: ISubmitSurveyPayload): Promise<ISubmitSurveyResult> {
+}: TSubmitSurveyPayload): Promise<TSubmitSurveyResult> {
   try {
     const result = await axiosInstance({
       url: '/survey',
@@ -31,7 +31,7 @@ async function submitSurveyAPI({
   }
 }
 
-export default function useSubmitSurvey({ submission_id, answer }: ISubmitSurveyPayload) {
+export default function useSubmitSurvey({ submission_id, answer }: TSubmitSurveyPayload) {
   const { mutate, error } = useMutation({
     mutationKey: [submission_id, answer],
     mutationFn: () => submitSurveyAPI({ submission_id, answer }),

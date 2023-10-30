@@ -1,11 +1,11 @@
 import { useQuery } from '@tanstack/react-query'
 import axiosInstance from '../../configs/axios'
 
-export interface IGetListBankPayload {
+export type TGetListBankPayload = {
   size: number
 }
 
-export interface IBankResult {
+export type TBankResult = {
   id: number
   uid: string
   account_number: string
@@ -15,7 +15,7 @@ export interface IBankResult {
   swift_bic: string
 }
 
-async function getListBankAPI({ size }: IGetListBankPayload): Promise<IBankResult[]> {
+async function getListBankAPI({ size }: TGetListBankPayload): Promise<TBankResult[]> {
   try {
     const result = await axiosInstance({
       url: '/banks',
@@ -31,7 +31,7 @@ async function getListBankAPI({ size }: IGetListBankPayload): Promise<IBankResul
   }
 }
 
-export default function useGetListBank({ size }: IGetListBankPayload) {
+export default function useGetListBank({ size }: TGetListBankPayload) {
   const { data, isLoading, error } = useQuery({
     queryKey: [size],
     queryFn: () => getListBankAPI({ size }),
