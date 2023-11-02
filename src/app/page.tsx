@@ -9,10 +9,10 @@ export default function Home() {
 
   return (
     <main>
-      <form className='flex flex-col items-center p-24 gap-3'>
-        <TextField id='outlined-basic' label='Outlined' variant='outlined' className='w-1/2' />
-        <TextField id='outlined-basic' label='Outlined' variant='outlined' className='w-1/2' />
-        <Button variant='contained' className='w-1/2'>
+      <form className='flex flex-col items-center gap-3'>
+        <TextField id='outlined-basic' label='Outlined' variant='outlined' fullWidth />
+        <TextField id='outlined-basic' label='Outlined' variant='outlined' fullWidth />
+        <Button variant='contained' fullWidth>
           Contained
         </Button>
         <Checkbox defaultChecked />

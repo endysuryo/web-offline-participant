@@ -14,7 +14,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <ReactQuery>{children}</ReactQuery>
+        <main className='w-full lg:w-1/3 mx-auto py-4'>
+          <ReactQuery>{children}</ReactQuery>
+        </main>
       </body>
     </html>
   )
