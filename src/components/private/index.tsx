@@ -1,3 +1,3 @@
-import GetLatLong from './get-lat-long'
+import SurveyDescription from './survey-description'
 
-export { GetLatLong }
+export { SurveyDescription }

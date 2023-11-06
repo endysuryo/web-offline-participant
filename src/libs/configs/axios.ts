@@ -9,9 +9,6 @@ const axiosInstance = axios.create({
 })
 
 const onRequest = async (request: InternalAxiosRequestConfig<any>) => {
-  const auth: any = localStorage.getItem('ACCOUNT_INFO')
-  request.headers.Authorization = `Bearer ${JSON.parse(auth)?.token}`
-
   return request
 }
 
