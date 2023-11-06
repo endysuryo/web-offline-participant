@@ -7,6 +7,7 @@ import usePostRegisterMutation, {
 import { Button, TextField } from '@mui/material'
 import { useFormik } from 'formik'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import React from 'react'
 
@@ -87,7 +88,22 @@ export default function Home() {
           <TextField id='recruiterCode' label='Recruiter Code' variant='outlined' fullWidth />
         )}
         <p className='text-sm font-light'>
-          Dengan menekan tombol “Masuk”, kamu menyetujui Kebijakan Privasi dan Syarat & Ketentuan
+          Dengan menekan tombol “Masuk”, kamu menyetujui{' '}
+          <Link
+            href='https://info.populix.co/kebijakan-privasi/'
+            target='_blank'
+            className='text-pop-dodger-blue'
+          >
+            Kebijakan Privasi
+          </Link>{' '}
+          dan{' '}
+          <Link
+            href='https://info.populix.co/kebijakan-privasi'
+            target='_blank'
+            className='text-pop-dodger-blue'
+          >
+            Syarat & Ketentuan
+          </Link>{' '}
           Populix.
         </p>
         <Button type='submit' color='primary' fullWidth variant='contained' disableElevation>
